@@ -1,0 +1,44 @@
+Objetivos del Proyecto
+
+Aplicar modelos de clustering (K-means y DBSCAN) y reducción de dimensionalidad (PCA y t-SNE) para segmentar perfiles de usuario o clientes en plataformas tecnológicas, visualizando resultados y analizando los patrones detectados.
+
+Etapa del Proyecto: 
+1.- Preparacion del Entorno
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+
+2.-Carga y análisis exploratorio de los datos
+
+3.-Visualizacion de Distribucion
+
+4.- Preprocesamiento
+
+5.- Implementación de Clustering
+
+5.1 K-means Clustering
+
+Visualizacion
+
+5.2 DBSCAN
+
+Visualizacion
+
+6.- Reducción de Dimensionalidad
+6.1 PCA
+
+6.2 t-SNE
+
+7 Análisis y conclusiones
+Responde brevemente en el Readme.md:
+¿Cuántos clusters parecen ser óptimos según K-means?
+•¿Cómo se comparan los resultados entre K-means y DBSCAN?
+•¿Qué aporta PCA/t-SNE a la interpretación de los clusters?
+•¿Qué tipo de perfiles de usuarios/consumidores has detectado?
