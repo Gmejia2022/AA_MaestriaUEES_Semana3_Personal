@@ -1,0 +1,42 @@
+============================================================
+  ETAPA 5: DBSCAN CLUSTERING
+============================================================
+
+--- PARAMETROS ---
+  eps = 0.6 (radio maximo para considerar vecinos)
+  min_samples = 5 (minimo de puntos para formar cluster)
+
+--- RESULTADOS ---
+  Clusters encontrados: 2
+  Puntos de ruido (outliers): 28 (14.0%)
+
+--- DISTRIBUCION POR CLUSTER ---
+  Ruido: 28 clientes (14.0%)
+  Cluster 0: 137 clientes (68.5%)
+  Cluster 1: 35 clientes (17.5%)
+
+--- MEDIAS POR CLUSTER (incluyendo ruido) ---
+                      Age  Annual Income (k$)  Spending Score (1-100)
+DBSCAN_Cluster                                                       
+-1              36.107143           76.857143               33.250000
+ 0              40.970803           51.613139               45.335766
+ 1              32.742857           82.542857               82.800000
+
+--- MEDIAS POR CLUSTER (sin ruido) ---
+                      Age  Annual Income (k$)  Spending Score (1-100)
+DBSCAN_Cluster                                                       
+0               40.970803           51.613139               45.335766
+1               32.742857           82.542857               82.800000
+
+--- INTERPRETACION ---
+  Cluster -1 (Ruido): Clientes con patrones atipicos que no encajan
+    en ninguna agrupacion densa. Suelen tener ingresos altos y gasto bajo.
+  Cluster 0: Edad=41, Ingreso=52k$, Gasto=45
+  Cluster 1: Edad=33, Ingreso=83k$, Gasto=83
+
+--- COMPARACION CON K-MEANS ---
+  K-Means: 4 clusters, sin deteccion de outliers
+  DBSCAN:  2 clusters + ruido, detecta outliers automaticamente
+  DBSCAN es mas conservador pero identifica clientes atipicos
+
+============================================================

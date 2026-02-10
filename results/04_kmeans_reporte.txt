@@ -1,0 +1,40 @@
+============================================================
+  ETAPA 4: K-MEANS CLUSTERING
+============================================================
+
+--- METODO DEL CODO (Inercia por K) ---
+  K=1 -> Inercia: 600.00
+  K=2 -> Inercia: 389.39
+  K=3 -> Inercia: 295.21
+  K=4 -> Inercia: 205.23  <-- K optimo
+  K=5 -> Inercia: 168.25
+  K=6 -> Inercia: 133.87
+  K=7 -> Inercia: 117.01
+  K=8 -> Inercia: 103.87
+  K=9 -> Inercia: 93.09
+
+--- MODELO FINAL: K=4 ---
+  Inercia del modelo: 205.23
+  Iteraciones: 5
+
+--- DISTRIBUCION DE CLIENTES POR CLUSTER ---
+  Cluster 0: 65 clientes (32.5%)
+  Cluster 1: 40 clientes (20.0%)
+  Cluster 2: 57 clientes (28.5%)
+  Cluster 3: 38 clientes (19.0%)
+
+--- MEDIAS POR CLUSTER ---
+                      Age  Annual Income (k$)  Spending Score (1-100)
+KMeans_Cluster                                                       
+0               53.984615           47.707692               39.969231
+1               32.875000           86.100000               81.525000
+2               25.438596           40.000000               60.298246
+3               39.368421           86.500000               19.578947
+
+--- INTERPRETACION DE PERFILES ---
+  Cluster 0: Edad=54, Ingreso=48k$, Gasto=40 -> Conservadores: Edad mayor, ingreso y gasto moderados
+  Cluster 1: Edad=33, Ingreso=86k$, Gasto=82 -> Premium: Alto ingreso y alto gasto
+  Cluster 2: Edad=25, Ingreso=40k$, Gasto=60 -> Jovenes activos: Bajo ingreso pero gasto medio-alto
+  Cluster 3: Edad=39, Ingreso=86k$, Gasto=20 -> Ahorradores: Alto ingreso pero bajo gasto
+
+============================================================

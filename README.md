@@ -45,10 +45,26 @@ AA_MaestriaUEES_Semana3_Personal/
 │   ├── 02_boxplots.png
 │   ├── 02_correlacion.png
 │   ├── 02_distribucion_genero.png
-│   └── 02_EDA_reporte.txt
+│   ├── 02_EDA_reporte.txt
+│   ├── 03_preprocesamiento_reporte.txt
+│   ├── 03_comparacion_distribuciones.png
+│   ├── 03_comparacion_boxplots.png
+│   ├── 03_pairplot_escalado.png
+│   ├── 04_metodo_del_codo.png
+│   ├── 04_kmeans_income_vs_spending.png
+│   ├── 04_kmeans_age_vs_spending.png
+│   ├── 04_kmeans_age_vs_income.png
+│   ├── 04_kmeans_reporte.txt
+│   ├── 05_dbscan_income_vs_spending.png
+│   ├── 05_dbscan_age_vs_spending.png
+│   ├── 05_comparacion_kmeans_vs_dbscan.png
+│   └── 05_dbscan_reporte.txt
 ├── scr/                   # Scripts de Python
 │   ├── 01_Preparacion_Entorno.py
-│   └── 02_CargaDatos_EDA.py
+│   ├── 02_CargaDatos_EDA.py
+│   ├── 03_PreProcesamiento.py
+│   ├── 04_K-Means.py
+│   └── 05_DBSCAN.py
 ├── Objetivos.txt
 ├── requirements.txt
 └── README.md
@@ -119,6 +135,87 @@ Se cargo el dataset **Mall_Customers.csv** (200 registros, 5 columnas) y se real
 ### Distribucion por Genero
 
 ![Distribucion Genero](results/02_distribucion_genero.png)
+
+---
+
+## Resultados - Etapa 3: Preprocesamiento (StandardScaler)
+
+Script: `scr/03_PreProcesamiento.py`
+
+Se aplico **StandardScaler** a las 3 variables numericas (Age, Annual Income, Spending Score) para normalizarlas a media=0 y desviacion estandar=1. Esto es necesario porque K-Means y DBSCAN usan distancias euclidianas, y sin escalado las variables con rangos mayores dominarian el calculo.
+
+### Comparacion de Distribuciones: Original vs Escalado
+
+![Comparacion Distribuciones](results/03_comparacion_distribuciones.png)
+
+### Boxplots Comparativos: Original vs Escalado
+
+![Comparacion Boxplots](results/03_comparacion_boxplots.png)
+
+### Pairplot - Datos Escalados
+
+![Pairplot Escalado](results/03_pairplot_escalado.png)
+
+---
+
+## Resultados - Etapa 4: K-Means Clustering
+
+Script: `scr/04_K-Means.py`
+
+Se aplico el **metodo del codo** evaluando de k=1 a k=9 clusters. El punto de inflexion se encuentra en **k=4**, donde la inercia deja de disminuir significativamente. Se entreno el modelo final con k=4 y se asignaron los clusters a cada cliente.
+
+### Metodo del Codo
+
+![Metodo del Codo](results/04_metodo_del_codo.png)
+
+### Segmentacion: Income vs Spending Score
+
+![KMeans Income vs Spending](results/04_kmeans_income_vs_spending.png)
+
+### Segmentacion: Age vs Spending Score
+
+![KMeans Age vs Spending](results/04_kmeans_age_vs_spending.png)
+
+### Segmentacion: Age vs Income
+
+![KMeans Age vs Income](results/04_kmeans_age_vs_income.png)
+
+### Medias por Cluster (K-Means)
+
+| Cluster | Edad Promedio | Ingreso Promedio (k$) | Gasto Promedio | Perfil |
+|---|---|---|---|---|
+| 0 | 54 | 48 | 40 | **Conservadores**: Edad mayor, ingreso y gasto moderados |
+| 1 | 33 | 86 | 82 | **Premium**: Jovenes con alto ingreso y alto gasto |
+| 2 | 25 | 40 | 60 | **Jovenes activos**: Bajo ingreso pero gasto medio-alto |
+| 3 | 39 | 87 | 20 | **Ahorradores**: Alto ingreso pero bajo gasto |
+
+---
+
+## Resultados - Etapa 5: DBSCAN Clustering
+
+Script: `scr/05_DBSCAN.py`
+
+Se aplico **DBSCAN** (eps=0.6, min_samples=5), un algoritmo basado en densidad que no requiere definir el numero de clusters. Encontro **2 clusters** y detecto automaticamente **outliers** (etiquetados como -1), que corresponden a clientes con patrones atipicos.
+
+### Segmentacion DBSCAN: Income vs Spending Score
+
+![DBSCAN Income vs Spending](results/05_dbscan_income_vs_spending.png)
+
+### Segmentacion DBSCAN: Age vs Spending Score
+
+![DBSCAN Age vs Spending](results/05_dbscan_age_vs_spending.png)
+
+### Comparacion: K-Means vs DBSCAN
+
+![Comparacion KMeans vs DBSCAN](results/05_comparacion_kmeans_vs_dbscan.png)
+
+### Medias por Cluster (DBSCAN)
+
+| Cluster | Edad Promedio | Ingreso Promedio (k$) | Gasto Promedio | Descripcion |
+|---|---|---|---|---|
+| -1 (Ruido) | 36 | 77 | 33 | **Outliers**: Patrones atipicos, ingresos altos y gasto bajo |
+| 0 | 41 | 52 | 45 | **Grupo principal**: Ingreso y gasto moderados |
+| 1 | 33 | 83 | 83 | **Premium**: Alto ingreso y alto gasto |
 
 ---
 
