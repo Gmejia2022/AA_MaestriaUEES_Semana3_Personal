@@ -1,5 +1,7 @@
 # === Archivos del proyecto excluidos ===
 Objetivos.txt
+scr/09_Generar_Informe_Word.py
+results/Informe_Segmentacion_Clientes.docx
 
 # === Python ===
 __pycache__/
