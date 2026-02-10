@@ -1,0 +1,68 @@
+============================================================
+  ETAPA 8: ANALISIS BASICO Y RESUMEN FINAL
+============================================================
+
+  Total de clientes analizados: 200
+  Variables utilizadas: ['Age', 'Annual Income (k$)', 'Spending Score (1-100)']
+
+--- CONTEO DE CLUSTERS UNICOS ---
+
+  K-Means:
+    Clusters unicos: [np.int32(0), np.int32(1), np.int32(2), np.int32(3)]
+    Total clusters:  4
+    Cluster 0: 65 clientes (32.5%)
+    Cluster 1: 40 clientes (20.0%)
+    Cluster 2: 57 clientes (28.5%)
+    Cluster 3: 38 clientes (19.0%)
+
+  DBSCAN:
+    Clusters unicos: [np.int64(-1), np.int64(0), np.int64(1)]
+    Total clusters:  2 (+ ruido)
+    Ruido: 28 clientes (14.0%)
+    Cluster 0: 137 clientes (68.5%)
+    Cluster 1: 35 clientes (17.5%)
+
+--- PERFILES DE CLIENTES (K-Means K=4) ---
+
+  Cluster 0 - Conservadores:
+    Edad promedio:    54 anios
+    Ingreso promedio: 48 k$
+    Gasto promedio:   40/100
+    Descripcion:      Edad mayor, ingreso y gasto moderados
+    Clientes:         65
+
+  Cluster 1 - Premium:
+    Edad promedio:    33 anios
+    Ingreso promedio: 86 k$
+    Gasto promedio:   82/100
+    Descripcion:      Jovenes con alto ingreso y alto gasto
+    Clientes:         40
+
+  Cluster 2 - Jovenes activos:
+    Edad promedio:    25 anios
+    Ingreso promedio: 40 k$
+    Gasto promedio:   60/100
+    Descripcion:      Bajo ingreso pero gasto medio-alto
+    Clientes:         57
+
+  Cluster 3 - Ahorradores:
+    Edad promedio:    39 anios
+    Ingreso promedio: 86 k$
+    Gasto promedio:   20/100
+    Descripcion:      Alto ingreso pero bajo gasto
+    Clientes:         38
+
+--- RESUMEN COMPARATIVO ---
+  K-Means (k=4):  4 clusters bien definidos, segmentacion granular
+  DBSCAN:         2 clusters + ruido, detecta outliers automaticamente
+  PCA:            Reduccion lineal, preserva varianza global
+  t-SNE:          Reduccion no lineal, mejor separacion visual
+
+--- CONCLUSIONES ---
+  1. El numero optimo de clusters segun K-Means es 4 (metodo del codo)
+  2. K-Means ofrece segmentacion mas detallada, DBSCAN detecta outliers
+  3. PCA y t-SNE confirman la separacion de los clusters
+  4. Se identificaron 4 perfiles: Conservadores, Premium,
+     Jovenes activos y Ahorradores
+
+============================================================

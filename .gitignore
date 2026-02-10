@@ -1,0 +1,31 @@
+# === Archivos del proyecto excluidos ===
+Objetivos.txt
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === Entornos virtuales ===
+venv/
+env/
+.env/
+
+# === IDEs ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Sistema operativo ===
+Thumbs.db
+.DS_Store
+
+# === Jupyter Notebook ===
+.ipynb_checkpoints/
+
+# === Distribuciones ===
+dist/
+build/
+*.egg-info/

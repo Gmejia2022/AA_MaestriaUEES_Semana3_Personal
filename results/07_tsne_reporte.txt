@@ -1,0 +1,44 @@
+============================================================
+  ETAPA 7: t-SNE - REDUCCION DE DIMENSIONALIDAD
+============================================================
+
+--- CONFIGURACION ---
+  Dimensiones originales: 3 (Age, Annual Income, Spending Score)
+  Dimensiones reducidas:  2 (Dim 1, Dim 2)
+  perplexity:     30 (vecinos cercanos considerados)
+  learning_rate:  200 (velocidad de aprendizaje)
+  random_state:   42
+
+--- METRICAS ---
+  KL divergence: 0.2123
+  Iteraciones:   999
+
+--- MEDIAS POR CLUSTER EN ESPACIO t-SNE ---
+                tSNE_Dim1  tSNE_Dim2
+KMeans_Cluster                      
+0               -8.158561   5.533656
+1               15.096372  -5.764273
+2               -1.219531  -2.453826
+3                0.788948   7.753337
+
+--- COMPARACION PCA vs t-SNE ---
+  PCA:
+    - Metodo lineal
+    - Preserva varianza global
+    - Rapido de calcular
+    - Componentes son interpretables (combinacion lineal)
+  t-SNE:
+    - Metodo no lineal
+    - Preserva estructura local (vecinos cercanos)
+    - Mas lento de calcular
+    - Mejor separacion visual de clusters densos
+
+--- INTERPRETACION ---
+  t-SNE genera agrupaciones mas compactas y separadas que PCA.
+  Los 4 perfiles de clientes se distinguen claramente:
+    Cluster 0: Conservadores (edad mayor, gasto moderado)
+    Cluster 1: Premium (alto ingreso y alto gasto)
+    Cluster 2: Jovenes activos (bajo ingreso, gasto medio-alto)
+    Cluster 3: Ahorradores (alto ingreso, bajo gasto)
+
+============================================================

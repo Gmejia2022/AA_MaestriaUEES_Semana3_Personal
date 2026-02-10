@@ -1,0 +1,41 @@
+============================================================
+  ETAPA 6: PCA - REDUCCION DE DIMENSIONALIDAD
+============================================================
+
+--- CONFIGURACION ---
+  Componentes originales: 3 (Age, Annual Income, Spending Score)
+  Componentes reducidos:  2 (PC1, PC2)
+
+--- VARIANZA EXPLICADA ---
+  PC1: 44.27%
+  PC2: 33.31%
+  Total: 77.57%
+
+--- COMPOSICION DE COMPONENTES ---
+  Cada componente es una combinacion lineal de las variables originales:
+  PC1 = 0.7064*Age + -0.0480*Income + -0.7062*Spending
+  PC2 = 0.0301*Age + 0.9988*Income + -0.0378*Spending
+
+--- MEDIAS POR CLUSTER EN ESPACIO PCA ---
+                     PC1       PC2
+KMeans_Cluster                    
+0               1.071288 -0.442251
+1              -1.208516  0.914846
+2              -0.919051 -0.827666
+3               0.818232  1.034985
+
+--- MEDIAS POR CLUSTER EN VARIABLES ORIGINALES ---
+                      Age  Annual Income (k$)  Spending Score (1-100)
+KMeans_Cluster                                                       
+0               53.984615           47.707692               39.969231
+1               32.875000           86.100000               81.525000
+2               25.438596           40.000000               60.298246
+3               39.368421           86.500000               19.578947
+
+--- INTERPRETACION ---
+  PCA reduce las 3 variables a 2 componentes principales preservando
+  el 77.6% de la varianza original.
+  La visualizacion confirma que los 4 clusters de K-Means estan
+  bien separados en el espacio reducido.
+
+============================================================
