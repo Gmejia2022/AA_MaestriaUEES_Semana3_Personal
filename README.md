@@ -39,6 +39,7 @@ AA_MaestriaUEES_Semana3_Personal/
 ├── notebooks/             # Jupyter notebooks
 │   └── semana3_Modelos_NoSupervisados.ipynb
 ├── results/               # Graficos y resultados exportados
+│   ├── 01_preparacion_entorno_reporte.txt
 │   ├── 02_pairplot.png
 │   ├── 02_histogramas.png
 │   ├── 02_boxplots.png
@@ -72,6 +73,26 @@ pip install -r requirements.txt
    - 6.1 PCA (2 componentes)
    - 6.2 t-SNE (2 componentes)
 7. **Analisis y Conclusiones**
+
+## Resultados - Etapa 1: Preparacion del Entorno
+
+Script: `scr/01_Preparacion_Entorno.py`
+
+Se verifico la instalacion correcta de todas las librerias necesarias y la estructura de carpetas del proyecto. El reporte completo se genera automaticamente en `results/01_preparacion_entorno_reporte.txt`.
+
+**Librerias verificadas:**
+
+| Libreria | Uso en el proyecto |
+|---|---|
+| pandas | Manejo y manipulacion de datos |
+| numpy | Operaciones numericas |
+| matplotlib | Visualizacion de graficos |
+| seaborn | Visualizacion estadistica avanzada |
+| scikit-learn | Clustering (KMeans, DBSCAN), PCA, t-SNE, StandardScaler |
+
+**Estructura de carpetas verificada:** Data, Models, notebooks, results, scr
+
+---
 
 ## Resultados - Etapa 2: Carga y Analisis Exploratorio (EDA)
 
